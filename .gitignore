@@ -5,11 +5,13 @@
 /tmp
 
 # dependencies
-/node_modules
+node_modules
 /bower_components
 
 # IDEs and editors
 /.idea
+.idea
+02-directives.iml
 .project
 .classpath
 *.launch
@@ -23,10 +25,10 @@
 npm-debug.log
 testem.log
 /typings
+.gitignore
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+/e2e
 
 #System Files
 .DS_Store
