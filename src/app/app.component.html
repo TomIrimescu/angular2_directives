@@ -8,9 +8,45 @@
 <h2>Custom Attribute Directive</h2>
 <!--<div highlight>Hover and<br> Click</div>-->
 <div [highlight]="'blue'" [defaultColor]="'red'">Hover and<br> Click</div>
+<hr>
+<h1>Structural Directives</h1>
+<h2>*ngIf</h2>
+<div *ngIf="switch" style="width:110px; height:25px;">Conditional Text</div>
+<!--The following is the above *ngIf statement with the * omitted - DE-SUGARED -->
+<template [ngIf]="switch">
+	<div style="width:110px; height:25px;">
+		Conditional Text
+	</div>
+</template>
+<button (click)="onSwitch()">Switch</button>
+<hr>
+<h2>*ngFor</h2>
+<ul>
+	<li *ngFor="let item of items; let i = index;">(Index: {{i}}) - {{item}}</li>
+</ul>
+<hr>
+<h2>ngSwitch</h2>
+<div [ngSwitch]="value" style="height:25px;">
+	<p *ngSwitchCase="10">10</p>
+	<p *ngSwitchCase="100">100</p>
+	<p *ngSwitchDefault>Default</p>
+</div>
+<!--The following is the above *ngSwitch statement with the * omitted - DE-SUGARED -->
+<p [ngSwitch]="value">
+	<template [ngSwitchCase]="10">10</template>
+	<template [ngSwitchCase]="100">100</template>
+	<template ngSwitchDefault>Default</template>
+</p>
+<h2>UnlessDirective</h2>
+<div *unless="switch" style="width:110px; height:25px;">Conditional Text</div>
+<!--The following is the above *unless statement with the * omitted - DE-SUGARED -->
+<template [unless]="switch">
+	<div style="width:110px; height:25px;">
+		Conditional Text
+	</div>
+</template>
 
-
-
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 
